@@ -18,7 +18,6 @@ export class ClienteComponent {
   constructor(private service: HttpService) {
     this.obtenerClientes();
 
-
   }
 
   crearCliente(){
