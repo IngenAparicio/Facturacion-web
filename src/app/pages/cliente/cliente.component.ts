@@ -17,7 +17,6 @@ export class ClienteComponent {
   selectBoxDataSource: DataSource;
   constructor(private service: HttpService) {
     this.obtenerClientes();
-
   }
 
   crearCliente(){
