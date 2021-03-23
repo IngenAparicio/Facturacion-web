@@ -1,0 +1,10 @@
+<dx-form [(formData)]="producto" (onFieldDataChanged)="form_fieldDataChanged($event)">  
+  <dxi-item dataField="NombreProducto" editorType="dxTextBox" [editorOptions]="{ disabled: false }"></dxi-item>
+  <dxi-item dataField="Precio" editorType="dxTextBox" [editorOptions]="{ disabled: false }"></dxi-item>
+  <dxi-item dataField="Inventario" editorType="dxTextBox" [editorOptions]="{ disabled: false }"></dxi-item>
+</dx-form>
+
+<div class="row">
+  <dx-button text="Guardar Información" type="default" [width]="200" (onClick)="crearProducto()">
+  </dx-button>
+</div>

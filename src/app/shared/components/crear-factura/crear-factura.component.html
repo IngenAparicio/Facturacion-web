@@ -1,0 +1,40 @@
+<dx-form [(formData)]="compra" (onFieldDataChanged)="form_fieldDataChanged($event)">  
+  <dxi-item dataField="Id" editorType="dxTextBox" [editorOptions]="{ disabled: false }"></dxi-item>
+</dx-form>
+
+<div class="row">
+  <dx-button text="Buscar" type="default" [width]="200" (onClick)="obtenerCompras()">
+  </dx-button>
+</div>
+
+<div class="content-block">
+<div class="dx-card responsive-paddings">
+  <dx-data-grid id="gridContainer"
+      [dataSource]="this.comprasFiltradas"
+      [showBorders]="true"
+      [columnAutoWidth]="true">
+  <dxi-column
+      dataField="Id"
+  ></dxi-column>
+  <dxi-column
+      dataField="NombreCliente"
+      caption="Nombre del Cliente"
+  ></dxi-column>
+  <dxi-column
+      dataField="NombreProducto"
+      caption="Producto"
+  ></dxi-column>
+  <dxi-column
+      dataField="CantidadVenta"
+      caption="Cantidad"
+  ></dxi-column>
+  <dxi-column
+      dataField="ValorCompra"
+      caption="Valor total producto"
+  ></dxi-column>
+  <dxi-column
+      dataField="Fecha"
+  ></dxi-column>
+  </dx-data-grid>
+</div>
+</div>

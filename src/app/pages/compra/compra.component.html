@@ -1,0 +1,69 @@
+<h2 class="content-block">Lista de Compras</h2>
+<div class="content-block">
+    <div class="row">
+        <dx-button text="Crear compra" type="default" (onClick)="crearCompra()">
+        </dx-button>
+    </div>
+    <div><p>---></p></div>
+    <div class="row">
+        <dx-button text="Agregar Producto" type="default" (onClick)="crearCompraProducto()">
+        </dx-button>
+    </div>
+    <div><p>---></p></div>
+    <div class="row">
+        <dx-button text="Crear Factura" type="default" (onClick)="crearFactura()">
+        </dx-button>
+    </div>
+    
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid id="gridContainer"
+        [dataSource]="this.compras"
+        [showBorders]="true"
+        [columnAutoWidth]="true">
+    <dxi-column
+        dataField="Id"
+    ></dxi-column>
+    <dxi-column
+        dataField="NombreCliente"
+        caption="Nombre del Cliente"
+    ></dxi-column>
+    <dxi-column
+        dataField="NombreProducto"
+        caption="Producto"
+    ></dxi-column>
+    <dxi-column
+        dataField="CantidadVenta"
+        caption="Cantidad"
+    ></dxi-column>
+    <dxi-column
+        dataField="ValorCompra"
+        caption="Valor total producto"
+    ></dxi-column>
+    <dxi-column
+        dataField="Fecha"
+    ></dxi-column>
+    <dxi-column
+        dataField="Acción" type="buttons">
+    <dxi-button hint="Clone" icon="edit" [onClick]="abrirCliente"></dxi-button>
+    </dxi-column>
+    </dx-data-grid>
+  </div>
+</div>
+
+<dx-popup [width]="300" [height]="250" [showTitle]="true" title="Crear Compra" [dragEnabled]="false"
+  [closeOnOutsideClick]="true" [(visible)]="popupVisible" (onHiding)="crearCompraAfterClose()" [height]="500"
+  [width]="500">
+  <app-agregar-compra></app-agregar-compra>
+</dx-popup>
+
+<dx-popup [width]="300" [height]="250" [showTitle]="true" title="Crear Compra Producto" [dragEnabled]="false"
+  [closeOnOutsideClick]="true" [(visible)]="popupVisible2" (onHiding)="crearCompraProductoAfterClose()" [height]="500"
+  [width]="500">
+  <app-agregar-c-producto></app-agregar-c-producto>
+</dx-popup>
+
+<dx-popup [showTitle]="true" title="Factura" [dragEnabled]="false"
+  [closeOnOutsideClick]="true" [(visible)]="popupVisible3" (onHiding)="crearFacturaAfterClose()" [height]="600"
+  [width]="1000">
+  <app-agregar-factura></app-agregar-factura>
+</dx-popup>

@@ -1,0 +1,33 @@
+<h2 class="content-block">Lista de Clientes</h2>
+<div class="content-block">
+    <div class="row">
+        <dx-button text="Crear cliente" type="default" (onClick)="crearCliente()">
+        </dx-button>
+    </div>
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid id="gridContainer"
+        [dataSource]="this.clientes"
+        [showBorders]="true"
+        [columnAutoWidth]="true">
+    <dxi-column
+        dataField="Id"
+    ></dxi-column>
+    <dxi-column
+        dataField="Nombre"
+    ></dxi-column>
+    <dxi-column
+        dataField="Edad"
+    ></dxi-column>
+    <dxi-column
+        dataField="Acción" type="buttons">
+    <dxi-button hint="Clone" icon="edit"></dxi-button>
+    </dxi-column>
+    </dx-data-grid>
+  </div>
+</div>
+
+<dx-popup [width]="300" [height]="250" [showTitle]="true" title="Crear Cliente" [dragEnabled]="false"
+  [closeOnOutsideClick]="true" [(visible)]="popupVisible" (onHiding)="crearClienteAfterClose()" [height]="500"
+  [width]="500" >
+  <app-agregar-cliente></app-agregar-cliente>
+</dx-popup>

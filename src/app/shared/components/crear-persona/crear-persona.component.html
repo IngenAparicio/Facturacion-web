@@ -1,0 +1,9 @@
+<dx-form [(formData)]="cliente" (onFieldDataChanged)="form_fieldDataChanged($event)">  
+  <dxi-item dataField="Nombre" editorType="dxTextBox" [editorOptions]="{ disabled: false }"></dxi-item>
+  <dxi-item dataField="Edad" editorType="dxTextBox" [editorOptions]="{ disabled: false }"></dxi-item>
+</dx-form>
+
+<div class="row">
+  <dx-button text="Guardar Información" type="default" [width]="200" (onClick)="crearPersona()">
+  </dx-button>
+</div>

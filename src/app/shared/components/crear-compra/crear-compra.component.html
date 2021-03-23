@@ -1,0 +1,8 @@
+<dx-form [(formData)]="compra" (onFieldDataChanged)="form_fieldDataChanged($event)">  
+  <dxi-item dataField="ClienteId" editorType="dxSelectBox" [editorOptions]="selectBoxOptions"></dxi-item>
+</dx-form>
+
+<div class="row">
+  <dx-button text="Guardar Información" type="default" [width]="200" (onClick)="crearCompra()">
+  </dx-button>
+</div>

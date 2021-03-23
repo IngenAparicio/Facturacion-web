@@ -1,0 +1,39 @@
+<h2 class="content-block">Lista de Productos</h2>
+<div class="content-block">
+    <div class="row">
+        <dx-button text="Crear producto" type="default" (onClick)="crearProducto()">
+        </dx-button>
+    </div>
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid id="gridContainer"
+        [dataSource]="this.productos"
+        [showBorders]="true"
+        [columnAutoWidth]="true">
+    <dxi-column
+        dataField="Id"
+    ></dxi-column>
+    <dxi-column
+        dataField="NombreProducto"
+        caption="Nombre del Producto"
+    ></dxi-column>
+    <dxi-column
+        dataField="Precio"
+        caption="Precio"
+    ></dxi-column>
+    <dxi-column
+        dataField="Inventario"
+        caption="Cantidad en Inventario"
+    ></dxi-column>
+    <dxi-column
+        dataField="Acción" type="buttons">
+    <dxi-button hint="Clone" icon="edit"></dxi-button>
+    </dxi-column>
+    </dx-data-grid>
+  </div>
+</div>
+
+<dx-popup [width]="300" [height]="250" [showTitle]="true" title="Crear producto" [dragEnabled]="false"
+  [closeOnOutsideClick]="true" [(visible)]="popupVisible" (onHiding)="crearProductoAfterClose()" [height]="500"
+  [width]="500" >
+  <app-agregar-producto></app-agregar-producto>
+</dx-popup>
